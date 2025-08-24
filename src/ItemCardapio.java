@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ItemCardapio {
     String nomeItem;
     int idItem;
@@ -9,8 +11,6 @@ public class ItemCardapio {
         this.preco = preco;
     }
 
-    public void cadastrarItem(){
 
-    }
 
 }
