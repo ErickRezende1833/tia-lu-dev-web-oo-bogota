@@ -5,17 +5,12 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
         while (true){
 
-            System.out.println("Menu");
-            System.out.println("1 = Menu Clientes");
-            System.out.println("2 = Menu Cardápio");
-            System.out.println("3 = Menu Pedidos");
+            int opcao = mostrarMenu(scanner);
 
-
-            Scanner scanner = new Scanner(System.in);
-            int opcao = scanner.nextInt();
             switch (opcao){
                 case 1:
                     System.out.println("Menu Clientes selecionado");
@@ -35,4 +30,16 @@ public class Main {
 
         }
     }
+
+    public static int mostrarMenu(Scanner scanner){
+
+        System.out.println("Menu");
+        System.out.println("1 = Menu Clientes");
+        System.out.println("2 = Menu Cardápio");
+        System.out.println("3 = Menu Pedidos");
+
+        return scanner.nextInt();
+    }
+
+
 }
