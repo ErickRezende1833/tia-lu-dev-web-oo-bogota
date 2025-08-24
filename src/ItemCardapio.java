@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 public class ItemCardapio {
     String nomeItem;
@@ -10,7 +9,5 @@ public class ItemCardapio {
         this.idItem = idItem;
         this.preco = preco;
     }
-
-
 
 }
