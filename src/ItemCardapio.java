@@ -9,6 +9,4 @@ public class ItemCardapio {
         this.preco = preco;
     }
 
-
-
 }
