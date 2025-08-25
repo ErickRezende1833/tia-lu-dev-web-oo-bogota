@@ -9,7 +9,7 @@ public class ItemService {
         int id = BancoDeDados.gerarIdItem();
         Item novoItem = new Item(id, nome, tipo, preco);
 
-        BancoDeDados.itens.add(novoItem));   
+        BancoDeDados.itens.add(novoItem);   
         System.out.println("Item cadastrado com sucesso! ID: " + id);
     }
     
