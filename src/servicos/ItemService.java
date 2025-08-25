@@ -15,5 +15,9 @@ public class ItemService {
     
     public static void listarItens() {
         System.out.println("\n--- ITENS ---");
+        
+        for (Item i : BancoDeDados.itens) {
+            System.out.println(i);
+        }
     }
 }
