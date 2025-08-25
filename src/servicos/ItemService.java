@@ -14,5 +14,6 @@ public class ItemService {
     }
     
     public static void listarItens() {
+        System.out.println("\n--- ITENS ---");
     }
 }
