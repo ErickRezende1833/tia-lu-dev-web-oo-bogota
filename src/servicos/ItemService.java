@@ -12,4 +12,7 @@ public class ItemService {
         BancoDeDados.itens.add(novoItem));   
         System.out.println("Item cadastrado com sucesso! ID: " + id);
     }
+    
+    public static void listarItens() {
+    }
 }
