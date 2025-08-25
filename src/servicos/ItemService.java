@@ -8,5 +8,8 @@ public class ItemService {
     public static void cadastrarItem(String nome, String tipo, double preco) {
         int id = BancoDeDados.gerarIdItem();
         Item novoItem = new Item(id, nome, tipo, preco);
+
+        BancoDeDados.itens.add(novoItem));
+        System.out.println("Item cadastrado com sucesso! ID: " + id);
     }
-}   
+}
