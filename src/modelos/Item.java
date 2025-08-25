@@ -12,4 +12,9 @@ public class Item {
         this.tipo = tipo;
         this.preco = preco;
     }
+
+    @Override
+    public String toString() {
+        return "ID: " + id + " | Nome: " + nome + " | Tipo: " + tipo + " | Preço: R$ " + preco;
+    }
 }
