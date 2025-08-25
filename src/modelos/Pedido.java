@@ -12,4 +12,9 @@ public class Pedido {
         this.idCliente = idCliente;
         this.status = "Aceito";
     }
+
+    @Override
+    public String toString() {
+        return "Pedido ID: " + id + " | Cliente ID: " + idCliente + " | Item ID: " + idItem + " | Status: " + status;
+    }
 }
