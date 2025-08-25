@@ -14,5 +14,6 @@ public class ClienteService {
     }
     
     public static void listarClientes() {
+        System.out.println("\n--- CLIENTES ---");
     }
 }
