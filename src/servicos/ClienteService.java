@@ -12,4 +12,7 @@ public class ClienteService {
         BancoDeDados.clientes.add(novoCliente);
         System.out.println("Cliente cadastrado com sucesso! ID: " + id);
     }
+    
+    public static void listarClientes() {
+    }
 }
