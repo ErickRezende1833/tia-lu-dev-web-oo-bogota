@@ -21,7 +21,7 @@ public class ItemService {
         System.out.print("Digite o tipo do item: ");
         String tipo = sc.nextLine();
         System.out.print("Digite o preço do item: ");
-        Double preco = sc.nextDouble();
+        double preco = sc.nextDouble();
         int id = BancoDeDados.gerarIdItem();
         Item novoItem = new Item(id, nome, tipo, preco);
         BancoDeDados.itens.add(novoItem);
