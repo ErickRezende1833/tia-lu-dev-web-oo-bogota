@@ -22,6 +22,16 @@ public class Main {
             System.out.println("0 - Sair");
             System.out.print("Escolha: ");
             opcao = sc.nextInt();
+
+            switch (opcao) {
+                case 1 -> ClienteService.listarClientes();
+                case 2 -> ItemService.listarItens();
+                case 3 -> PedidoService.criarPedido(sc);
+                case 4 -> PedidoService.avancarPedido(sc);
+                case 5 -> PedidoService.listarPedidos();
+                case 0 -> System.out.println("Saindo...");
+                default -> System.out.println("Opção inválida.");
+            }
         }
     }
 }
