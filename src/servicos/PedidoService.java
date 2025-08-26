@@ -23,8 +23,16 @@ public static void listarPedidos() {
 		System.out.println(p); 
 		} 
 	}
+
 public static void avancarPedido(Scanner sc) { 
 		System.out.print("Digite o ID do pedido: "); 
 	int id = sc.nextInt(); 
+	
+	for (Pedido p : BancoDeDados.pedidos) { 
+		if (p.id == id) { p.avancarStatus(); 
+			System.out.println("Novo status: " + p.status);
+				return; 
+			} 
+		}
 	}
 }
