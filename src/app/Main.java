@@ -32,6 +32,7 @@ public class Main {
                 case 4 -> PedidoService.avancarPedido(sc);
                 case 5 -> PedidoService.listarPedidos();
                 case 6 -> ClienteService.cadastrarCliente(sc);
+                case 7 -> ItemService.criarItem(sc);
                 case 0 -> System.out.println("Saindo...");
                 default -> System.out.println("Opção inválida.");
             }
