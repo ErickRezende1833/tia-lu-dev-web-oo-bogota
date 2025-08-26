@@ -21,6 +21,7 @@ public class Main {
             System.out.println("5 - Listar Pedidos");
             System.out.println("0 - Sair");
             System.out.print("Escolha: ");
-           
+            opcao = sc.nextInt();
+        }
     }
 }
