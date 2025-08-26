@@ -15,4 +15,7 @@ public class PedidoService {
 	BancoDeDados.pedidos.add(novoPedido);
 		System.out.println("Pedido criado com sucesso!");
 		} 
+
+public static void listarPedidos() { 
+	}
 }
