@@ -30,6 +30,7 @@ public class Main {
                 case 4 -> PedidoService.avancarPedido(sc);
                 case 5 -> PedidoService.listarPedidos();
                 case 0 -> System.out.println("Saindo...");
+                case 6 -> ClienteService.cadastrarCliente(sc);
                 default -> System.out.println("Opção inválida.");
             }
         } while (opcao != 0);
