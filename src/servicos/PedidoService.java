@@ -23,4 +23,6 @@ public static void listarPedidos() {
 		System.out.println(p); 
 		} 
 	}
+public static void avancarPedido(Scanner sc) { 
+	}
 }
