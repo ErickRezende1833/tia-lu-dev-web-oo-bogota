@@ -33,5 +33,7 @@ public class Main {
                 default -> System.out.println("Opção inválida.");
             }
         } while (opcao != 0);
+
+        sc.close();
     }
 }
