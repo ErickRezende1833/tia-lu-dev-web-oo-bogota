@@ -31,6 +31,7 @@ public class Main {
                 case 5 -> PedidoService.listarPedidos();
                 case 0 -> System.out.println("Saindo...");
                 case 6 -> ClienteService.cadastrarCliente(sc);
+                case 7 -> ItemService.cadastrarItem(sc);
                 default -> System.out.println("Opção inválida.");
             }
         } while (opcao != 0);
