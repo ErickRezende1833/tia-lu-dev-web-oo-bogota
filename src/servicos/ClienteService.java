@@ -7,23 +7,24 @@ import java.util.Scanner;
 
 public class ClienteService {
     
-    public static void cadastrarCliente(String nome, String telefone) {
-        int id = BancoDeDados.gerarIdCliente();
-        Cliente novoCliente = new Cliente(id, nome, telefone);
+//    public static void cadastrarCliente(String nome, String telefone) {
+//        int id = BancoDeDados.gerarIdCliente();
+//
+//        Cliente novoCliente = new Cliente(id, nome, telefone);
+//
+//        BancoDeDados.clientes.add(novoCliente);
+//        System.out.println("Cliente cadastrado com sucesso! ID: " + id);
+//    }
 
-        BancoDeDados.clientes.add(novoCliente);
-        System.out.println("Cliente cadastrado com sucesso! ID: " + id);
-    }
-
-    public static void criarCliente(Scanner sc){
-        sc.nextLine();
+    public static void cadastrarCliente(Scanner sc){
         System.out.print("Digite o nome do cliente: ");
         String nome = sc.nextLine();
         System.out.print("Digite o telefone do cliente: ");
         String telefone = sc.nextLine();
-        int id = BancoDeDados.clientes.size() + 1;
+        int id = BancoDeDados.gerarIdCliente();
         Cliente novoCliente = new Cliente(id, nome, telefone);
         BancoDeDados.clientes.add(novoCliente);
+        System.out.println("Cliente cadastrado com sucesso! ID: " + id);
     }
     
     public static void listarClientes() {
