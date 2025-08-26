@@ -15,24 +15,26 @@ public class Main {
         do {
             System.out.println("\n===== MENU =====");
             System.out.println("1 - Listar Clientes");
-            System.out.println("2 - Listar Itens");
-            System.out.println("3 - Criar Pedido");
-            System.out.println("4 - Avançar Status do Pedido");
-            System.out.println("5 - Listar Pedidos");
+            System.out.println("2 - Cadastrar Cliente");
+            System.out.println("3 - Listar Itens");
+            System.out.println("4 - Cadastrar Item");
+            System.out.println("5 - Criar Pedido");
+            System.out.println("6 - Avançar Status do Pedido");
+            System.out.println("7 - Listar Pedidos");
             System.out.println("0 - Sair");
             System.out.print("Escolha: ");
-            System.out.println("6 - Listar Clientes");
+
             opcao = sc.nextInt();
             sc.nextLine();
 
             switch (opcao) {
                 case 1 -> ClienteService.listarClientes();
-                case 2 -> ItemService.listarItens();
-                case 3 -> PedidoService.criarPedido(sc);
-                case 4 -> PedidoService.avancarPedido(sc);
-                case 5 -> PedidoService.listarPedidos();
-                case 6 -> ClienteService.cadastrarCliente(sc);
-                case 7 -> ItemService.cadastrarItem(sc);
+                case 2 -> ClienteService.cadastrarCliente(sc);
+                case 3 -> ItemService.listarItens();
+                case 4 -> ItemService.cadastrarItem(sc);
+                case 5 -> PedidoService.criarPedido(sc);
+                case 6 -> PedidoService.avancarPedido(sc);
+                case 7 -> PedidoService.listarPedidos();
                 case 0 -> System.out.println("Saindo...");
                 default -> System.out.println("Opção inválida.");
             }
