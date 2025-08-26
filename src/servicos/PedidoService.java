@@ -1,7 +1,8 @@
 package servicos; 
 
 import java.util.Scanner; 
-import dados.BancoDeDados; 
+import dados.BancoDeDados;
+import modelos.Pedido; 
 
 public class PedidoService { 
 	public static void criarPedido(Scanner sc) { 
@@ -10,5 +11,6 @@ public class PedidoService {
 		System.out.print("Digite o ID do item: "); 
 	int idItem = sc.nextInt(); 
 	int idPedido = BancoDeDados.pedidos.size() + 1; 
+	Pedido novoPedido = new Pedido(idPedido, idItem, idCliente);
 		} 
 }
