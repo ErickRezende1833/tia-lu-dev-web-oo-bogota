@@ -24,5 +24,7 @@ public static void listarPedidos() {
 		} 
 	}
 public static void avancarPedido(Scanner sc) { 
+		System.out.print("Digite o ID do pedido: "); 
+	int id = sc.nextInt(); 
 	}
 }
