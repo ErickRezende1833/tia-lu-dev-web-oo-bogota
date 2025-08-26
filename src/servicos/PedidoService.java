@@ -1,4 +1,8 @@
 package servicos; 
 
-public class PedidoService {
+import java.util.Scanner; 
+
+public class PedidoService { 
+	public static void criarPedido(Scanner sc) { 
+	}
 }
