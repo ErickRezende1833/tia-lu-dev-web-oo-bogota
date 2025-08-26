@@ -21,6 +21,7 @@ public class Main {
             System.out.println("5 - Listar Pedidos");
             System.out.println("0 - Sair");
             System.out.print("Escolha: ");
+            System.out.println("6 - Listar Clientes");
             opcao = sc.nextInt();
 
             switch (opcao) {
@@ -29,6 +30,7 @@ public class Main {
                 case 3 -> PedidoService.criarPedido(sc);
                 case 4 -> PedidoService.avancarPedido(sc);
                 case 5 -> PedidoService.listarPedidos();
+                case 6 -> ClienteService.criarCliente(sc);
                 case 0 -> System.out.println("Saindo...");
                 default -> System.out.println("Opção inválida.");
             }
