@@ -13,6 +13,14 @@ public class Main {
 
         int opcao;
         do {
-          
+            System.out.println("\n===== MENU =====");
+            System.out.println("1 - Listar Clientes");
+            System.out.println("2 - Listar Itens");
+            System.out.println("3 - Criar Pedido");
+            System.out.println("4 - Avançar Status do Pedido");
+            System.out.println("5 - Listar Pedidos");
+            System.out.println("0 - Sair");
+            System.out.print("Escolha: ");
+           
     }
 }
