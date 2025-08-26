@@ -34,5 +34,6 @@ public static void avancarPedido(Scanner sc) {
 				return; 
 			} 
 		}
+	System.out.println("Pedido não encontrado."); 
 	}
 }
