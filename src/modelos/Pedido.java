@@ -13,6 +13,17 @@ public class Pedido {
         this.status = "Aceito";
     }
 
+    public void avancarStatus() {
+        switch (status) {
+            case "Aceito" -> status = "Preparando";
+            case "Preparando" -> status = "Feito";
+            case "Feito" -> status = "Aguardando entregador";
+            case "Aguardando entregador" -> status = "Saiu para entrega";
+            case "Saiu para entrega" -> status = "Entregue";
+            default -> System.out.println("Pedido já finalizado.");
+        }
+    }
+
     @Override
     public String toString() {
         return "Pedido ID: " + id + " | Cliente ID: " + idCliente + " | Item ID: " + idItem + " | Status: " + status;
