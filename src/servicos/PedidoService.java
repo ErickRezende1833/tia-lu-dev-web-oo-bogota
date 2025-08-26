@@ -12,5 +12,7 @@ public class PedidoService {
 	int idItem = sc.nextInt(); 
 	int idPedido = BancoDeDados.pedidos.size() + 1; 
 	Pedido novoPedido = new Pedido(idPedido, idItem, idCliente);
+	BancoDeDados.pedidos.add(novoPedido);
+		System.out.println("Pedido criado com sucesso!");
 		} 
 }
