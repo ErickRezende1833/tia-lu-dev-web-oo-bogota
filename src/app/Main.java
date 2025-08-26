@@ -32,6 +32,6 @@ public class Main {
                 case 0 -> System.out.println("Saindo...");
                 default -> System.out.println("Opção inválida.");
             }
-        }
+        } while (opcao != 0);
     }
 }
