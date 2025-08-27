@@ -30,6 +30,6 @@ public class Pedido {
 
     @Override
     public String toString() {
-        return "Pedido ID: " + id + " | Cliente ID: " + idCliente + " | Item ID: " + idItem + " | Status: " + status;
+        return "Pedido ID: " + id + " | Cliente ID: " + idCliente + " | Item ID: " + idItem + " | Data e hora: " + tempo + " | Status: " + status;
     }
 }
