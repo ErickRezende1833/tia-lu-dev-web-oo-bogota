@@ -13,11 +13,7 @@ public class PedidoService {
 		System.out.print("Digite o ID do item: "); 
 	int idItem = sc.nextInt(); 
 	int idPedido = BancoDeDados.pedidos.size() + 1;
-
 	LocalDateTime tempo = LocalDateTime.now();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-		String tempof = tempo.format(formatter);
-
 	Pedido novoPedido = new Pedido(idPedido, idItem, idCliente, tempo);
 	BancoDeDados.pedidos.add(novoPedido);
 	System.out.println("Pedido criado com sucesso!");
