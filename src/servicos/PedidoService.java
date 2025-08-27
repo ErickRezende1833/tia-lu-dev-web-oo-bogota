@@ -1,6 +1,7 @@
 package servicos; 
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 import dados.BancoDeDados;
 import modelos.Pedido; 
@@ -12,11 +13,15 @@ public class PedidoService {
 		System.out.print("Digite o ID do item: "); 
 	int idItem = sc.nextInt(); 
 	int idPedido = BancoDeDados.pedidos.size() + 1;
+
 	LocalDateTime tempo = LocalDateTime.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+		String tempof = tempo.format(formatter);
+
 	Pedido novoPedido = new Pedido(idPedido, idItem, idCliente, tempo);
 	BancoDeDados.pedidos.add(novoPedido);
-		System.out.println("Pedido criado com sucesso!");
-		} 
+	System.out.println("Pedido criado com sucesso!");
+	}
 
 public static void listarPedidos() { 
 	System.out.println("\n--- PEDIDOS ---"); 
