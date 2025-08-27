@@ -9,12 +9,12 @@ public class Pedido {
     public String status;
     public LocalDateTime tempo;
 
-    public Pedido(int id, int idItem, int idCliente) {
+    public Pedido(int id, int idItem, int idCliente, LocalDateTime tempo) {
         this.id = id;
         this.idItem = idItem;
         this.idCliente = idCliente;
         this.status = "Aceito";
-        this.tempo = LocalDateTime.now();
+        this.tempo = tempo;
     }
 
     public void avancarStatus() {
