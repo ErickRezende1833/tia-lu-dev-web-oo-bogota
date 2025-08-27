@@ -1,16 +1,20 @@
 package modelos;
 
+import java.time.LocalDateTime;
+
 public class Pedido {
     public int id;
     public int idItem;
     public int idCliente;
     public String status;
+    public LocalDateTime tempo;
 
     public Pedido(int id, int idItem, int idCliente) {
         this.id = id;
         this.idItem = idItem;
         this.idCliente = idCliente;
         this.status = "Aceito";
+        this.tempo = tempo;
     }
 
     public void avancarStatus() {
