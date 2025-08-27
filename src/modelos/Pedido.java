@@ -1,6 +1,7 @@
 package modelos;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Pedido {
     public int id;
@@ -30,6 +31,8 @@ public class Pedido {
 
     @Override
     public String toString() {
-        return "Pedido ID: " + id + " | Cliente ID: " + idCliente + " | Item ID: " + idItem + " | Data e hora: " + tempo + " | Status: " + status;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String tempof = tempo.format(formatter);
+        return "Pedido ID: " + id + " | Cliente ID: " + idCliente + " | Item ID: " + idItem + " | Data e hora: " + tempof + " | Status: " + status;
     }
 }
