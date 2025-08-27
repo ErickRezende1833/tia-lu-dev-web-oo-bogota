@@ -14,7 +14,7 @@ public class Pedido {
         this.idItem = idItem;
         this.idCliente = idCliente;
         this.status = "Aceito";
-        this.tempo = tempo;
+        this.tempo = LocalDateTime.now();
     }
 
     public void avancarStatus() {
