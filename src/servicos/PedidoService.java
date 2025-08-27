@@ -1,7 +1,6 @@
 package servicos; 
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 import dados.BancoDeDados;
 import modelos.Pedido; 
