@@ -1,6 +1,7 @@
 package servicos; 
 
-import java.util.Scanner; 
+import java.time.LocalDateTime;
+import java.util.Scanner;
 import dados.BancoDeDados;
 import modelos.Pedido; 
 
@@ -10,8 +11,9 @@ public class PedidoService {
 	int idCliente = sc.nextInt(); 
 		System.out.print("Digite o ID do item: "); 
 	int idItem = sc.nextInt(); 
-	int idPedido = BancoDeDados.pedidos.size() + 1; 
-	Pedido novoPedido = new Pedido(idPedido, idItem, idCliente);
+	int idPedido = BancoDeDados.pedidos.size() + 1;
+	LocalDateTime tempo = LocalDateTime.now();
+	Pedido novoPedido = new Pedido(idPedido, idItem, idCliente, tempo);
 	BancoDeDados.pedidos.add(novoPedido);
 		System.out.println("Pedido criado com sucesso!");
 		} 
