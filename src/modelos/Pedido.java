@@ -1,16 +1,22 @@
 package modelos;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
 public class Pedido {
     public int id;
-    public int idItem;
+    public List<Integer> idItens;
     public int idCliente;
     public String status;
+    public LocalDateTime tempo;
 
-    public Pedido(int id, int idItem, int idCliente) {
+    public Pedido(int id, List<Integer> idItens, int idCliente, LocalDateTime tempo) {
         this.id = id;
-        this.idItem = idItem;
+        this.idItens = idItens;
         this.idCliente = idCliente;
         this.status = "Aceito";
+        this.tempo = tempo;
     }
 
     public void avancarStatus() {
@@ -26,6 +32,8 @@ public class Pedido {
 
     @Override
     public String toString() {
-        return "Pedido ID: " + id + " | Cliente ID: " + idCliente + " | Item ID: " + idItem + " | Status: " + status;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String tempof = tempo.format(formatter);
+        return "Pedido ID: " + id + " | Cliente ID: " + idCliente + " | Item ID: " + idItens + " | Data e hora: " + tempof + " | Status: " + status;
     }
 }
