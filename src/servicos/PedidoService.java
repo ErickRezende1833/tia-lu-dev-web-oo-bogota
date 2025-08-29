@@ -1,8 +1,10 @@
 package servicos; 
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 import dados.BancoDeDados;
@@ -39,6 +41,11 @@ public class PedidoService {
 	}
 
 	public static void gerarRelatorioSimplificado() {
+		LocalDate dataHoje = LocalDate.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		String dataHojef = dataHoje.format(formatter);
+
+		System.out.println("=== Relatório Simples "+ dataHojef + " ===");
 		int totalPedidos = BancoDeDados.pedidos.size();
 		double valorTotal = 0.0;
 
