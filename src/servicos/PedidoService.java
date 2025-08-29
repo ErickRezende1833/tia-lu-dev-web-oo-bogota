@@ -43,8 +43,11 @@ public class PedidoService {
 
 		for(Pedido pedido : BancoDeDados.pedidos){
 			for(Integer idItem : pedido.idItens){
-				for (Item item : BancoDeDados.itens){
-					valorTotal += item.preco;
+				for(Item item : BancoDeDados.itens){
+					if(item.id == idItem){
+						valorTotal += item.preco;
+						break;
+					}
 				}
 			}
 		}
