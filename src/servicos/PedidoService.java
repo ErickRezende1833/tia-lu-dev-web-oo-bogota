@@ -60,6 +60,7 @@ public class PedidoService {
 	public static void gerarRelatorioDetalhado() {
 
 		for (Pedido pedido : BancoDeDados.pedidos) {
+			double totalPedido = 0.0;
 
 			for (Cliente cliente : BancoDeDados.clientes) {
 				if (cliente.id == pedido.idCliente) {
@@ -72,10 +73,12 @@ public class PedidoService {
 				for (Item item : BancoDeDados.itens) {
 					if (item.id == idItem) {
 						System.out.println(item.nome);
+						totalPedido += item.preco;
 						break;
 					}
 				}
 			}
+			System.out.println(totalPedido);
 		}
 	}
 
