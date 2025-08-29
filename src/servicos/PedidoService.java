@@ -58,6 +58,7 @@ public class PedidoService {
 	}
 
 	public static void gerarRelatorioDetalhado() {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
 		System.out.println("=== Relatório Detalhado ===");
 
@@ -65,6 +66,7 @@ public class PedidoService {
 			double totalPedido = 0.0;
 
 			System.out.println("\nPedido ID: " + pedido.id);
+			System.out.println("Data: " +pedido.tempo.format(formatter));
 
 			for (Cliente cliente : BancoDeDados.clientes) {
 				if (cliente.id == pedido.idCliente) {
