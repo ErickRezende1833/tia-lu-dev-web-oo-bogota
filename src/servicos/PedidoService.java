@@ -48,6 +48,9 @@ public class PedidoService {
 				}
 			}
 		}
+
+		System.out.println(totalPedidos);
+		System.out.println(valorTotal);
 	}
 
 
