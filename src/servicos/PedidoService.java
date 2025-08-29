@@ -59,6 +59,15 @@ public class PedidoService {
 
 	public static void gerarRelatorioDetalhado() {
 
+		for (Pedido pedido : BancoDeDados.pedidos) {
+
+			for (Cliente cliente : BancoDeDados.clientes) {
+				if (cliente.id == pedido.idCliente) {
+					System.out.println(cliente.nome);
+					break;
+				}
+			}
+		}
 	}
 
 	public static void listarPedidos() {
