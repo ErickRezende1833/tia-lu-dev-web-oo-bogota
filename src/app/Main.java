@@ -21,6 +21,7 @@ public class Main {
             System.out.println("5 - Criar Pedido");
             System.out.println("6 - Avançar Status do Pedido");
             System.out.println("7 - Listar Pedidos");
+            System.out.println("8 - Gerar relatorio simplificado");
             System.out.println("0 - Sair");
             System.out.print("Escolha: ");
 
@@ -35,6 +36,7 @@ public class Main {
                 case 5 -> PedidoService.criarPedido(sc);
                 case 6 -> PedidoService.avancarPedido(sc);
                 case 7 -> PedidoService.listarPedidos();
+                case 8 -> PedidoService.gerarRelatorioSimplificado();
                 case 0 -> System.out.println("Saindo...");
                 default -> System.out.println("Opção inválida.");
             }
