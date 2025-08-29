@@ -52,8 +52,8 @@ public class PedidoService {
 			}
 		}
 
-		System.out.println(totalPedidos);
-		System.out.println(valorTotal);
+		System.out.println("Total de pedidos: " + totalPedidos);
+		System.out.println("Valor total dos pedidos: " + valorTotal);
 	}
 
 
