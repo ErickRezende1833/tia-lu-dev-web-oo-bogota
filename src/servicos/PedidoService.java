@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import dados.BancoDeDados;
+import modelos.Item;
 import modelos.Pedido;
 
 public class PedidoService { 
@@ -41,7 +42,11 @@ public class PedidoService {
 		double valorTotal = 0.0;
 
 		for(Pedido pedido : BancoDeDados.pedidos){
-
+			for(Integer idItem : pedido.idItens){
+				for (Item item : BancoDeDados.itens){
+					valorTotal += item.preco;
+				}
+			}
 		}
 	}
 
