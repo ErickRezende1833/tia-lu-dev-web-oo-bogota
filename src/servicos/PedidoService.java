@@ -59,26 +59,30 @@ public class PedidoService {
 
 	public static void gerarRelatorioDetalhado() {
 
+		System.out.println("=== Relatório Detalhado ===");
+
 		for (Pedido pedido : BancoDeDados.pedidos) {
 			double totalPedido = 0.0;
 
+			System.out.println("\nPedido ID: " + pedido.id);
+
 			for (Cliente cliente : BancoDeDados.clientes) {
 				if (cliente.id == pedido.idCliente) {
-					System.out.println(cliente.nome);
+					System.out.println("Cliente ID: " + cliente.id + " | Nome: " + cliente.nome + " | Telefone: " + cliente.telefone);
 					break;
 				}
 			}
-
+			System.out.println("Itens:");
 			for (Integer idItem : pedido.idItens) {
 				for (Item item : BancoDeDados.itens) {
 					if (item.id == idItem) {
-						System.out.println(item.nome);
+						System.out.println(" " + item.nome + " | R$ " + item.preco);
 						totalPedido += item.preco;
 						break;
 					}
 				}
 			}
-			System.out.println(totalPedido);
+			System.out.println("Total do pedido: R$ " + totalPedido);
 		}
 	}
 
