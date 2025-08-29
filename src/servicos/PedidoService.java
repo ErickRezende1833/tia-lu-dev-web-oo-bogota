@@ -39,6 +39,10 @@ public class PedidoService {
 	public static void gerarRelatorioSimplificado() {
 		int totalPedidos = BancoDeDados.pedidos.size();
 		double valorTotal = 0.0;
+
+		for(Pedido pedido : BancoDeDados.pedidos){
+
+		}
 	}
 
 
