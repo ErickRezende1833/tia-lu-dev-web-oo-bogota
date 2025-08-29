@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import dados.BancoDeDados;
-import modelos.Pedido; 
+import modelos.Pedido;
 
 public class PedidoService { 
 	public static void criarPedido(Scanner sc) { 
@@ -34,6 +34,13 @@ public class PedidoService {
 	BancoDeDados.pedidos.add(novoPedido);
 	System.out.println("Pedido criado com sucesso!");
 	}
+
+
+	public static void gerarRelatorioSimplificado() {
+		int totalPedidos = BancoDeDados.pedidos.size();
+		double valorTotal = 0.0;
+	}
+
 
 public static void listarPedidos() { 
 	System.out.println("\n--- PEDIDOS ---"); 
