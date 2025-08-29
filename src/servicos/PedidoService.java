@@ -67,6 +67,15 @@ public class PedidoService {
 					break;
 				}
 			}
+
+			for (Integer idItem : pedido.idItens) {
+				for (Item item : BancoDeDados.itens) {
+					if (item.id == idItem) {
+						System.out.println(item.nome);
+						break;
+					}
+				}
+			}
 		}
 	}
 
