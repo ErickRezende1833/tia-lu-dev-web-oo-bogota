@@ -22,6 +22,7 @@ public class Main {
             System.out.println("6 - Avançar Status do Pedido");
             System.out.println("7 - Listar Pedidos");
             System.out.println("8 - Gerar relatorio simplificado");
+            System.out.println("9 - Gerar relatório Detalhado");
             System.out.println("0 - Sair");
             System.out.print("Escolha: ");
 
