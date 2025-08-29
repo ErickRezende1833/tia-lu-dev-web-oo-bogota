@@ -36,7 +36,6 @@ public class PedidoService {
 	System.out.println("Pedido criado com sucesso!");
 	}
 
-
 	public static void gerarRelatorioSimplificado() {
 		int totalPedidos = BancoDeDados.pedidos.size();
 		double valorTotal = 0.0;
@@ -55,7 +54,6 @@ public class PedidoService {
 		System.out.println("Total de pedidos: " + totalPedidos);
 		System.out.println("Valor total dos pedidos: " + valorTotal);
 	}
-
 
 public static void listarPedidos() { 
 	System.out.println("\n--- PEDIDOS ---"); 
