@@ -1,10 +1,12 @@
 package servicos; 
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import dados.BancoDeDados;
+import modelos.Cliente;
 import modelos.Item;
 import modelos.Pedido;
 
@@ -55,7 +57,11 @@ public class PedidoService {
 		System.out.println("Valor total dos pedidos: " + valorTotal);
 	}
 
-public static void listarPedidos() { 
+	public static void gerarRelatorioDetalhado() {
+
+	}
+
+	public static void listarPedidos() {
 	System.out.println("\n--- PEDIDOS ---"); 
 	
 	for (Pedido p : BancoDeDados.pedidos) { 
