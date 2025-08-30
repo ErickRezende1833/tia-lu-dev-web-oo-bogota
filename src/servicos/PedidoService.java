@@ -110,7 +110,14 @@ public class PedidoService {
 	}
 
 	public static void buscarPedidoPorStatus(Scanner sc){
-		System.out.println("Digite o status: ");
+		System.out.println("Escolha o status buscado:");
+		System.out.println("1 - Aceito");
+		System.out.println("2 - Preparando");
+		System.out.println("3 - Feito");
+		System.out.println("4 - Aguardando entregador");
+		System.out.println("5 - Saiu para entrega");
+		System.out.println("6 - Entregue");
+		System.out.print("Escolha: ");
 		String statusBuscado = "";
 		int opcao = sc.nextInt();
 		switch (opcao){
