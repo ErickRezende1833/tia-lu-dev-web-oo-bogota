@@ -13,14 +13,17 @@ import modelos.Pedido;
 
 public class PedidoService { 
 	public static void criarPedido(Scanner sc) {
-		System.out.print("Digite o ID do cliente: "); 
+
+		ClienteService.listarClientes();
+		System.out.print("\nDigite o ID do cliente: ");
 		int idCliente = sc.nextInt();
 		boolean adicionarItens = true;
 
 		List<Integer> idItens = new ArrayList<>();
+		ItemService.listarItens();
 
 		while (adicionarItens){
-			System.out.print("Digite o ID do item: ");
+			System.out.print("\nDigite o ID do item: ");
 			int iditem = sc.nextInt();
 			System.out.print("Quantidade: ");
 			int qtd = sc.nextInt();
