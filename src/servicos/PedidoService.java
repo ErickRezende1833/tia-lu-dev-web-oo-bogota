@@ -18,6 +18,20 @@ public class PedidoService {
 		System.out.print("\nDigite o ID do cliente: ");
 
 		int idCliente = sc.nextInt();
+
+		Cliente clienteEncontrado = null;
+		for (Cliente cliente : BancoDeDados.clientes) {
+			if (cliente.id == idCliente) {
+				clienteEncontrado = cliente;
+				break;
+			}
+		}
+
+		if (clienteEncontrado == null) {
+			System.out.println("Erro: Cliente não encontrado. Não é possível criar o pedido.");
+			return;
+		}
+
 		boolean adicionarItens = true;
 
 		List<Integer> idItens = new ArrayList<>();
