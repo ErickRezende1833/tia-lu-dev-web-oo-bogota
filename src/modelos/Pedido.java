@@ -29,11 +29,4 @@ public class Pedido {
             default -> System.out.println("Pedido já finalizado.");
         }
     }
-
-    @Override
-    public String toString() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-        String tempof = tempo.format(formatter);
-        return "Pedido ID: " + id + " | Cliente ID: " + idCliente + " | Item ID: " + idItens + " | Data e hora: " + tempof + " | Status: " + status;
-    }
 }

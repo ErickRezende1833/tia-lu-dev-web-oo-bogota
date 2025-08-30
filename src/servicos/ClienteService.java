@@ -22,7 +22,7 @@ public class ClienteService {
         System.out.println("\n--- CLIENTES ---");
         
         for (Cliente c : BancoDeDados.clientes) {
-           System.out.println(c);
+           System.out.println("ID: " + c.id + " | Nome: " + c.nome + " | Telefone: " + c.telefone);
             }
     }
 }

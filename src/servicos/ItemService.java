@@ -24,7 +24,7 @@ public class ItemService {
         System.out.println("\n--- ITENS ---");
         
         for (Item i : BancoDeDados.itens) {
-            System.out.println(i);
+            System.out.println("ID: " + i.id + " | Nome: " + i.nome + " | Tipo: " + i.tipo + " | Preço: R$ " + i.preco);
         }
     }
 }

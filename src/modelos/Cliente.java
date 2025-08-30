@@ -10,9 +10,4 @@ public class Cliente {
         this.nome = nome;
         this.telefone = telefone;
     }
-
-    @Override
-    public String toString() {
-        return "ID: " + id + " | Nome: " + nome + " | Telefone: " + telefone;
-    }
 }
