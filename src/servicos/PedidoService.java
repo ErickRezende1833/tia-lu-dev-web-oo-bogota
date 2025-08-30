@@ -60,7 +60,7 @@ public class PedidoService {
 		}
 
 		System.out.println("Total de pedidos: " + totalPedidos);
-		System.out.println("Valor total dos pedidos: " + valorTotal);
+		System.out.println("Valor total dos pedidos: " + String.format("%.2f", valorTotal));
 	}
 
 	public static void gerarRelatorioDetalhado() {
@@ -93,12 +93,12 @@ public class PedidoService {
 
 				if (quantidade > 0) {
 					double subtotal = item.preco * quantidade;
-					System.out.println( item.nome + " " + quantidade + " " + subtotal);
+					System.out.println( item.nome + " | " + quantidade + "x" + " | R$ " + String.format("%.2f", subtotal));
 					totalPedido += subtotal;
 				}
 			}
 
-			System.out.println("Total do pedido: R$ " + totalPedido);
+			System.out.println("Total do pedido: R$ " + String.format("%.2f", totalPedido));
 		}
 	}
 
