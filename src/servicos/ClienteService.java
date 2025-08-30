@@ -13,6 +13,11 @@ public class ClienteService {
             String nome = sc.nextLine();
             System.out.print("Digite o telefone do cliente: ");
             String telefone = sc.nextLine();
+            String apenasNumeros = telefone.replaceAll("\\D", "");
+                if (apenasNumeros.length() < 10 || apenasNumeros.length() > 11) {
+                    System.out.println("Erro: telefone inválido.");
+                    return;
+                }
             int id = BancoDeDados.gerarIdCliente();
             Cliente novoCliente = new Cliente(id, nome, telefone);
             BancoDeDados.clientes.add(novoCliente);
