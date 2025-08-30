@@ -29,7 +29,7 @@ public class PedidoService {
 
 		if (clienteEncontrado == null) {
 			System.out.println("Erro: Cliente não encontrado. Não é possível criar o pedido.");
-			return;
+			criarPedido(sc);
 		}
 
 		boolean adicionarItens = true;
@@ -40,6 +40,20 @@ public class PedidoService {
 		while (adicionarItens){
 			System.out.print("\nDigite o ID do item: ");
 			int iditem = sc.nextInt();
+
+			Item itemEncontrado = null;
+			for (Item item : BancoDeDados.itens) {
+				if (item.id == iditem) {
+					itemEncontrado = item;
+					break;
+				}
+			}
+
+			if (itemEncontrado == null) {
+				System.out.println("Erro: Item não encontrado. Não é possível criar o pedido.");
+				criarPedido(sc);
+			}
+
 			System.out.print("Quantidade: ");
 			int qtd = sc.nextInt();
 
@@ -170,6 +184,7 @@ public class PedidoService {
 		} catch (Exception e) {
 			System.out.println("Erro: entrada inválida. Por favor, digite um número.");
 			sc.nextLine();
+			buscarPedidoPorStatus(sc);
 		}
 	}
 
