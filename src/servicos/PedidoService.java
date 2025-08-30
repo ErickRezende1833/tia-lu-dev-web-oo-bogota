@@ -118,8 +118,11 @@ public class PedidoService {
 		System.out.println("5 - Saiu para entrega");
 		System.out.println("6 - Entregue");
 		System.out.print("Escolha: ");
+
 		String statusBuscado = "";
+
 		int opcao = sc.nextInt();
+
 		switch (opcao){
 			case 1 -> statusBuscado = "Aceito";
 			case 2 -> statusBuscado = "Preparando";
@@ -130,6 +133,7 @@ public class PedidoService {
 			default -> System.out.println("Pedido já finalizado.");
 		}
 
+		System.out.println("\n--- PEDIDOS ---");
 
 		boolean isEncontrado = false;
 		for (Pedido pedido : BancoDeDados.pedidos){
@@ -138,6 +142,7 @@ public class PedidoService {
 				isEncontrado = true;
 			}
 		}
+
 		if(!isEncontrado){
 			System.out.println("Nenhum pedido encontrado com o status " + statusBuscado + ".");
 		}
