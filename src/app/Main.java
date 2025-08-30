@@ -41,6 +41,7 @@ public class Main {
                 case 9 -> PedidoService.gerarRelatorioDetalhado();
                 case 0 -> System.out.println("Saindo...");
                 default -> System.out.println("Opção inválida.");
+                case 10 -> PedidoService.buscarPedidoPorStatus(sc);
             }
         } while (opcao != 0);
 
