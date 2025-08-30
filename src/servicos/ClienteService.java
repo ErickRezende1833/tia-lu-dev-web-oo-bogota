@@ -7,15 +7,20 @@ import java.util.Scanner;
 
 public class ClienteService {
 
-    public static void cadastrarCliente(Scanner sc){
-        System.out.print("Digite o nome do cliente: ");
-        String nome = sc.nextLine();
-        System.out.print("Digite o telefone do cliente: ");
-        String telefone = sc.nextLine();
-        int id = BancoDeDados.gerarIdCliente();
-        Cliente novoCliente = new Cliente(id, nome, telefone);
-        BancoDeDados.clientes.add(novoCliente);
-        System.out.println("Cliente cadastrado com sucesso! ID: " + id);
+    public static void cadastrarCliente(Scanner sc) {
+        try {
+            System.out.print("Digite o nome do cliente: ");
+            String nome = sc.nextLine();
+            System.out.print("Digite o telefone do cliente: ");
+            String telefone = sc.nextLine();
+            int id = BancoDeDados.gerarIdCliente();
+            Cliente novoCliente = new Cliente(id, nome, telefone);
+            BancoDeDados.clientes.add(novoCliente);
+            System.out.println("Cliente cadastrado com sucesso! ID: " + id);
+        } catch (Exception e) {
+            System.out.println("Erro ao cadastrar cliente. Verifique os dados e tente novamente.");
+            sc.nextLine();
+        }
     }
     
     public static void listarClientes() {
