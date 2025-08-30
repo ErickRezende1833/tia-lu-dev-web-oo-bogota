@@ -1,5 +1,6 @@
 package servicos; 
 
+import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -18,19 +19,17 @@ public class PedidoService {
 
 
 		List<Integer> idItens = new ArrayList<>();
-		boolean adicionarItens = true;
 
-		while (adicionarItens){
-			System.out.print("Digite o ID do item: ");
-			int iditem = sc.nextInt();
+		System.out.print("Digite o ID do item: ");
+		int iditem = sc.nextInt();
+		System.out.println("Quantidade: ");
+		int qtd = sc.nextInt();
+		for(int i = 0; i < qtd; i++ ){
 			idItens.add(iditem);
-			System.out.print("(1) Adicionar mais itens: ");
-			System.out.print("(0) Não adicionar mais itens: ");
-			int resposta = sc.nextInt();
-			if (resposta == 0){
-				adicionarItens = false;
-			}
 		}
+
+
+
 
 	int idPedido = BancoDeDados.pedidos.size() + 1;
 	LocalDateTime tempo = LocalDateTime.now();
