@@ -3,6 +3,7 @@ package servicos;
 import dados.BancoDeDados;
 import modelos.Cliente;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class ClienteService {
@@ -11,12 +12,16 @@ public class ClienteService {
         try {
             System.out.print("Digite o nome do cliente: ");
             String nome = sc.nextLine();
+                if (Objects.equals(nome, "")){
+                    System.out.println("Erro: nome invalido ");
+                    cadastrarCliente(sc);
+                }
             System.out.print("Digite o telefone do cliente: ");
             String telefone = sc.nextLine();
             String apenasNumeros = telefone.replaceAll("\\D", "");
                 if (apenasNumeros.length() < 10 || apenasNumeros.length() > 11) {
                     System.out.println("Erro: telefone inválido.");
-                    return;
+                    cadastrarCliente(sc);
                 }
             int id = BancoDeDados.gerarIdCliente();
             Cliente novoCliente = new Cliente(id, nome, telefone);
