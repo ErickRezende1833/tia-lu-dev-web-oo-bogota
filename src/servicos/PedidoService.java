@@ -113,7 +113,7 @@ public class PedidoService {
 		}
 	}
 
-	public static void buscarPedidoPorStatus(Scanner sc){
+	public static void buscarPedidoPorStatus(Scanner sc) {
 		System.out.println("Escolha o status buscado:");
 		System.out.println("1 - Aceito");
 		System.out.println("2 - Preparando");
@@ -125,32 +125,37 @@ public class PedidoService {
 
 		String statusBuscado = "";
 
-		int opcao = sc.nextInt();
+		try {
+			int opcao = sc.nextInt();
 
-		switch (opcao){
-			case 1 -> statusBuscado = "Aceito";
-			case 2 -> statusBuscado = "Preparando";
-			case 3 -> statusBuscado = "Feito";
-			case 4 -> statusBuscado = "Aguardando entregador";
-			case 5 -> statusBuscado = "Saiu para entrega";
-			case 6 -> statusBuscado = "Entregue";
-			default -> System.out.println("Pedido já finalizado.");
-		}
-
-		System.out.println("\n--- PEDIDOS ---");
-
-		boolean isEncontrado = false;
-		for (Pedido pedido : BancoDeDados.pedidos){
-			if(statusBuscado.equals(pedido.status)){
-				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-				String tempof = pedido.tempo.format(formatter);
-				System.out.println("Pedido ID: " + pedido.id + " | Cliente ID: " + pedido.idCliente + " | Item ID: " + pedido.idItens + " | Data e hora: " + tempof + " | Status: " + pedido.status);
-				isEncontrado = true;
+			switch (opcao) {
+				case 1 -> statusBuscado = "Aceito";
+				case 2 -> statusBuscado = "Preparando";
+				case 3 -> statusBuscado = "Feito";
+				case 4 -> statusBuscado = "Aguardando entregador";
+				case 5 -> statusBuscado = "Saiu para entrega";
+				case 6 -> statusBuscado = "Entregue";
+				default -> System.out.println("Pedido já finalizado.");
 			}
-		}
 
-		if(!isEncontrado){
-			System.out.println("Nenhum pedido encontrado com o status " + statusBuscado + ".");
+			System.out.println("\n--- PEDIDOS ---");
+
+			boolean isEncontrado = false;
+			for (Pedido pedido : BancoDeDados.pedidos) {
+				if (statusBuscado.equals(pedido.status)) {
+					DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+					String tempof = pedido.tempo.format(formatter);
+					System.out.println("Pedido ID: " + pedido.id + " | Cliente ID: " + pedido.idCliente + " | Item ID: " + pedido.idItens + " | Data e hora: " + tempof + " | Status: " + pedido.status);
+					isEncontrado = true;
+				}
+			}
+
+			if (!isEncontrado) {
+				System.out.println("Nenhum pedido encontrado com o status " + statusBuscado + ".");
+			}
+		} catch (Exception e) {
+			System.out.println("Erro: entrada inválida. Por favor, digite um número.");
+			sc.nextLine();
 		}
 	}
 
