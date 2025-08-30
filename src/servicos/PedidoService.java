@@ -109,6 +109,46 @@ public class PedidoService {
 		}
 	}
 
+	public static void buscarPedidoPorStatus(Scanner sc){
+		System.out.println("Escolha o status buscado:");
+		System.out.println("1 - Aceito");
+		System.out.println("2 - Preparando");
+		System.out.println("3 - Feito");
+		System.out.println("4 - Aguardando entregador");
+		System.out.println("5 - Saiu para entrega");
+		System.out.println("6 - Entregue");
+		System.out.print("Escolha: ");
+
+		String statusBuscado = "";
+
+		int opcao = sc.nextInt();
+
+		switch (opcao){
+			case 1 -> statusBuscado = "Aceito";
+			case 2 -> statusBuscado = "Preparando";
+			case 3 -> statusBuscado = "Feito";
+			case 4 -> statusBuscado = "Aguardando entregador";
+			case 5 -> statusBuscado = "Saiu para entrega";
+			case 6 -> statusBuscado = "Entregue";
+			default -> System.out.println("Pedido já finalizado.");
+		}
+
+		System.out.println("\n--- PEDIDOS ---");
+
+		boolean isEncontrado = false;
+		for (Pedido pedido : BancoDeDados.pedidos){
+			if(statusBuscado.equals(pedido.status)){
+				System.out.println(pedido);
+				isEncontrado = true;
+			}
+		}
+
+		if(!isEncontrado){
+			System.out.println("Nenhum pedido encontrado com o status " + statusBuscado + ".");
+		}
+	}
+
+
 
 	public static void listarPedidos() {
 	System.out.println("\n--- PEDIDOS ---"); 

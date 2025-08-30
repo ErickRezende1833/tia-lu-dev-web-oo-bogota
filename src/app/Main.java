@@ -20,7 +20,7 @@ public class Main {
             System.out.println("4 - Cadastrar Item");
             System.out.println("5 - Criar Pedido");
             System.out.println("6 - Avançar Status do Pedido");
-            System.out.println("7 - Listar Pedidos");
+            System.out.println("7 - Listar Pedidos por Status");
             System.out.println("8 - Gerar relatorio simplificado");
             System.out.println("9 - Gerar relatório Detalhado");
             System.out.println("0 - Sair");
@@ -36,7 +36,7 @@ public class Main {
                 case 4 -> ItemService.cadastrarItem(sc);
                 case 5 -> PedidoService.criarPedido(sc);
                 case 6 -> PedidoService.avancarPedido(sc);
-                case 7 -> PedidoService.listarPedidos();
+                case 7 -> PedidoService.buscarPedidoPorStatus(sc);
                 case 8 -> PedidoService.gerarRelatorioSimplificado();
                 case 9 -> PedidoService.gerarRelatorioDetalhado();
                 case 0 -> System.out.println("Saindo...");
