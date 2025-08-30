@@ -16,6 +16,7 @@ public class PedidoService {
 
 		ClienteService.listarClientes();
 		System.out.print("\nDigite o ID do cliente: ");
+
 		int idCliente = sc.nextInt();
 		boolean adicionarItens = true;
 
