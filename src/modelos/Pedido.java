@@ -1,7 +1,6 @@
 package modelos;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class Pedido {
@@ -28,12 +27,5 @@ public class Pedido {
             case "Saiu para entrega" -> status = "Entregue";
             default -> System.out.println("Pedido já finalizado.");
         }
-    }
-
-    @Override
-    public String toString() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-        String tempof = tempo.format(formatter);
-        return "Pedido ID: " + id + " | Cliente ID: " + idCliente + " | Item ID: " + idItens + " | Data e hora: " + tempof + " | Status: " + status;
     }
 }

@@ -12,7 +12,7 @@ import modelos.Item;
 import modelos.Pedido;
 
 public class PedidoService { 
-	public static void criarPedido(Scanner sc) { 
+	public static void criarPedido(Scanner sc) {
 		System.out.print("Digite o ID do cliente: "); 
 		int idCliente = sc.nextInt();
 		boolean adicionarItens = true;
@@ -51,7 +51,7 @@ public class PedidoService {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		String dataHojef = dataHoje.format(formatter);
 
-		System.out.println("=== Relatório Simples "+ dataHojef + " ===");
+		System.out.println("\n=== Relatório Simples "+ dataHojef + " ===");
 		int totalPedidos = BancoDeDados.pedidos.size();
 		double valorTotal = 0.0;
 
@@ -73,13 +73,13 @@ public class PedidoService {
 	public static void gerarRelatorioDetalhado() {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
-		System.out.println("=== Relatório Detalhado ===");
+		System.out.println("\n=== Relatório Detalhado ===");
 
 		for (Pedido pedido : BancoDeDados.pedidos) {
 			double totalPedido = 0.0;
 
 			System.out.println("\nPedido ID: " + pedido.id);
-			System.out.println("Data: " +pedido.tempo.format(formatter));
+			System.out.println("Data: " + pedido.tempo.format(formatter));
 
 			for (Cliente cliente : BancoDeDados.clientes) {
 				if (cliente.id == pedido.idCliente) {
@@ -138,7 +138,9 @@ public class PedidoService {
 		boolean isEncontrado = false;
 		for (Pedido pedido : BancoDeDados.pedidos){
 			if(statusBuscado.equals(pedido.status)){
-				System.out.println(pedido);
+				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+				String tempof = pedido.tempo.format(formatter);
+				System.out.println("Pedido ID: " + pedido.id + " | Cliente ID: " + pedido.idCliente + " | Item ID: " + pedido.idItens + " | Data e hora: " + tempof + " | Status: " + pedido.status);
 				isEncontrado = true;
 			}
 		}
@@ -153,8 +155,10 @@ public class PedidoService {
 	public static void listarPedidos() {
 	System.out.println("\n--- PEDIDOS ---"); 
 	
-	for (Pedido p : BancoDeDados.pedidos) { 
-		System.out.println(p); 
+	for (Pedido p : BancoDeDados.pedidos) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+		String tempof = p.tempo.format(formatter);
+		System.out.println("Pedido ID: " + p.id + " | Cliente ID: " + p.idCliente + " | Item ID: " + p.idItens + " | Data e hora: " + tempof + " | Status: " + p.status);
 		} 
 	}
 
