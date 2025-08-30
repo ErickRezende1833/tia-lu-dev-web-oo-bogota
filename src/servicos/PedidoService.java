@@ -153,18 +153,6 @@ public class PedidoService {
 		}
 	}
 
-
-
-	public static void listarPedidos() {
-	System.out.println("\n--- PEDIDOS ---"); 
-	
-	for (Pedido p : BancoDeDados.pedidos) {
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-		String tempof = p.tempo.format(formatter);
-		System.out.println("Pedido ID: " + p.id + " | Cliente ID: " + p.idCliente + " | Item ID: " + p.idItens + " | Data e hora: " + tempof + " | Status: " + p.status);
-		} 
-	}
-
 public static void avancarPedido(Scanner sc) { 
 		System.out.print("Digite o ID do pedido: "); 
 	int id = sc.nextInt(); 
