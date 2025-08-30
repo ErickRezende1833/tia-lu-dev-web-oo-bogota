@@ -93,7 +93,7 @@ public class PedidoService {
 
 				if (quantidade > 0) {
 					double subtotal = item.preco * quantidade;
-					System.out.println( item.nome + " | " + quantidade + "x" + " | R$ " + String.format("%.2f", subtotal));
+					System.out.println( item.nome + " " + quantidade + "x | R$ " + String.format("%.2f", subtotal));
 					totalPedido += subtotal;
 				}
 			}
