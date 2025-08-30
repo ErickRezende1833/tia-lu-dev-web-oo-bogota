@@ -26,6 +26,7 @@ public class Main {
             System.out.println("0 - Sair");
             System.out.print("Escolha: ");
 
+            try{
             opcao = sc.nextInt();
             sc.nextLine();
 
@@ -42,6 +43,13 @@ public class Main {
                 case 0 -> System.out.println("Saindo...");
                 default -> System.out.println("Opção inválida.");
             }
+
+            } catch (Exception e){
+                    System.out.println("Erro: entrada inválida. Digite um número.");
+                    sc.nextLine();
+                    opcao = -1;
+                }
+
         } while (opcao != 0);
 
         sc.close();
