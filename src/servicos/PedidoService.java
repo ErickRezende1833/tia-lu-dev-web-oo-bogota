@@ -81,18 +81,27 @@ public class PedidoService {
 				}
 			}
 			System.out.println("Itens:");
-			for (Integer idItem : pedido.idItens) {
-				for (Item item : BancoDeDados.itens) {
-					if (item.id == idItem) {
-						System.out.println(" " + item.nome + " | R$ " + item.preco);
-						totalPedido += item.preco;
-						break;
+
+			for (Item item : BancoDeDados.itens) {
+				int quantidade = 0;
+
+				for (Integer idItem : pedido.idItens) {
+					if (idItem == item.id) {
+						quantidade++;
 					}
 				}
+
+				if (quantidade > 0) {
+					double subtotal = item.preco * quantidade;
+					System.out.println( item.nome + " " + quantidade + " " + subtotal);
+					totalPedido += subtotal;
+				}
 			}
+
 			System.out.println("Total do pedido: R$ " + totalPedido);
 		}
 	}
+
 
 	public static void listarPedidos() {
 	System.out.println("\n--- PEDIDOS ---"); 
