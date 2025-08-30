@@ -1,6 +1,5 @@
 package servicos; 
 
-import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -15,17 +14,25 @@ import modelos.Pedido;
 public class PedidoService { 
 	public static void criarPedido(Scanner sc) { 
 		System.out.print("Digite o ID do cliente: "); 
-	int idCliente = sc.nextInt(); 
-
+		int idCliente = sc.nextInt();
+		boolean adicionarItens = true;
 
 		List<Integer> idItens = new ArrayList<>();
 
+		while (adicionarItens){
 		System.out.print("Digite o ID do item: ");
 		int iditem = sc.nextInt();
 		System.out.println("Quantidade: ");
 		int qtd = sc.nextInt();
 		for(int i = 0; i < qtd; i++ ){
 			idItens.add(iditem);
+		}
+			System.out.print("(1) Adicionar mais itens: ");
+			System.out.print("(0) Não adicionar mais itens: ");
+			int resposta = sc.nextInt();
+			if (resposta == 0){
+				adicionarItens = false;
+			}
 		}
 
 
