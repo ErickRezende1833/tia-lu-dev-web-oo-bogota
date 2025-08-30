@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 import dados.BancoDeDados;
 import modelos.Cliente;
@@ -106,6 +107,33 @@ public class PedidoService {
 			}
 
 			System.out.println("Total do pedido: R$ " + String.format("%.2f", totalPedido));
+		}
+	}
+
+	public static void buscarPedidoPorStatus(Scanner sc){
+		System.out.println("Digite o status: ");
+		String statusBuscado = "";
+		int opcao = sc.nextInt();
+		switch (opcao){
+			case 1 -> statusBuscado = "Aceito";
+			case 2 -> statusBuscado = "Preparando";
+			case 3 -> statusBuscado = "Feito";
+			case 4 -> statusBuscado = "Aguardando entregador";
+			case 5 -> statusBuscado = "Saiu para entrega";
+			case 6 -> statusBuscado = "Entregue";
+			default -> System.out.println("Pedido já finalizado.");
+		}
+
+
+		boolean isEncontrado = false;
+		for (Pedido pedido : BancoDeDados.pedidos){
+			if(statusBuscado.equals(pedido.status)){
+				System.out.println(pedido);
+				isEncontrado = true;
+			}
+		}
+		if(!isEncontrado){
+			System.out.println("Nenhum pedido encontrado com o status " + statusBuscado + ".");
 		}
 	}
 
