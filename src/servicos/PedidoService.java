@@ -14,19 +14,26 @@ import modelos.Pedido;
 public class PedidoService { 
 	public static void criarPedido(Scanner sc) { 
 		System.out.print("Digite o ID do cliente: "); 
-	int idCliente = sc.nextInt(); 
-
+		int idCliente = sc.nextInt();
+		boolean adicionarItens = true;
 
 		List<Integer> idItens = new ArrayList<>();
-		boolean adicionarItens = true;
 
 		while (adicionarItens){
 			System.out.print("Digite o ID do item: ");
 			int iditem = sc.nextInt();
-			idItens.add(iditem);
-			System.out.print("(1) Adicionar mais itens: ");
-			System.out.print("(0) Não adicionar mais itens: ");
+			System.out.print("Quantidade: ");
+			int qtd = sc.nextInt();
+
+			for(int i = 0; i < qtd; i++ ){
+				idItens.add(iditem);
+			}
+
+			System.out.println("(1) Adicionar mais itens: ");
+			System.out.println("(0) Não adicionar mais itens: ");
+			System.out.print("Escolha: ");
 			int resposta = sc.nextInt();
+
 			if (resposta == 0){
 				adicionarItens = false;
 			}
@@ -60,7 +67,7 @@ public class PedidoService {
 		}
 
 		System.out.println("Total de pedidos: " + totalPedidos);
-		System.out.println("Valor total dos pedidos: " + valorTotal);
+		System.out.println("Valor total dos pedidos: " + String.format("%.2f", valorTotal));
 	}
 
 	public static void gerarRelatorioDetalhado() {
@@ -81,18 +88,27 @@ public class PedidoService {
 				}
 			}
 			System.out.println("Itens:");
-			for (Integer idItem : pedido.idItens) {
-				for (Item item : BancoDeDados.itens) {
-					if (item.id == idItem) {
-						System.out.println(" " + item.nome + " | R$ " + item.preco);
-						totalPedido += item.preco;
-						break;
+
+			for (Item item : BancoDeDados.itens) {
+				int quantidade = 0;
+
+				for (Integer idItem : pedido.idItens) {
+					if (idItem == item.id) {
+						quantidade++;
 					}
 				}
+
+				if (quantidade > 0) {
+					double subtotal = item.preco * quantidade;
+					System.out.println( item.nome + " " + quantidade + "x | R$ " + String.format("%.2f", subtotal));
+					totalPedido += subtotal;
+				}
 			}
-			System.out.println("Total do pedido: R$ " + totalPedido);
+
+			System.out.println("Total do pedido: R$ " + String.format("%.2f", totalPedido));
 		}
 	}
+
 
 	public static void listarPedidos() {
 	System.out.println("\n--- PEDIDOS ---"); 
