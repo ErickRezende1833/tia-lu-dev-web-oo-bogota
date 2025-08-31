@@ -14,14 +14,14 @@ public class ClienteService {
             String nome = sc.nextLine();
                 if (Objects.equals(nome, "")){
                     System.out.println("Erro: nome invalido ");
-                    cadastrarCliente(sc);
+                    return;
                 }
             System.out.print("Digite o telefone do cliente: ");
             String telefone = sc.nextLine();
             String apenasNumeros = telefone.replaceAll("\\D", "");
                 if (apenasNumeros.length() < 10 || apenasNumeros.length() > 11) {
                     System.out.println("Erro: telefone inválido.");
-                    cadastrarCliente(sc);
+                    return;
                 }
             int id = BancoDeDados.gerarIdCliente();
             Cliente novoCliente = new Cliente(id, nome, telefone);
