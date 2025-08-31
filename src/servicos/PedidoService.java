@@ -29,7 +29,7 @@ public class PedidoService {
 
 		if (clienteEncontrado == null) {
 			System.out.println("Erro: Cliente não encontrado. Não é possível criar o pedido.");
-			criarPedido(sc);
+			return;
 		}
 
 		boolean adicionarItens = true;
@@ -51,7 +51,7 @@ public class PedidoService {
 
 			if (itemEncontrado == null) {
 				System.out.println("Erro: Item não encontrado. Não é possível criar o pedido.");
-				criarPedido(sc);
+				return;
 			}
 
 			System.out.print("Quantidade: ");
@@ -184,7 +184,6 @@ public class PedidoService {
 		} catch (Exception e) {
 			System.out.println("Erro: entrada inválida. Por favor, digite um número.");
 			sc.nextLine();
-			buscarPedidoPorStatus(sc);
 		}
 	}
 
