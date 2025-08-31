@@ -14,13 +14,13 @@ public class ItemService {
             String nome = sc.nextLine();
             if (Objects.equals(nome, "")){
                 System.out.println("Erro: nome invalido ");
-                cadastrarItem(sc);
+                return;
             }
             System.out.print("Digite o tipo do item: ");
             String tipo = sc.nextLine();
             if (Objects.equals(nome, "")){
                 System.out.println("Erro: nome invalido ");
-                cadastrarItem(sc);
+                return;
             }
             System.out.print("Digite o preço do item: ");
             double preco = sc.nextDouble();
