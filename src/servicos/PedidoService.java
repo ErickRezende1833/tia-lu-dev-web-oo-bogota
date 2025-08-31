@@ -187,16 +187,29 @@ public class PedidoService {
 		}
 	}
 
-public static void avancarPedido(Scanner sc) { 
-		System.out.print("Digite o ID do pedido: "); 
-	int id = sc.nextInt(); 
-	
-	for (Pedido p : BancoDeDados.pedidos) { 
-		if (p.id == id) { p.avancarStatus(); 
-			System.out.println("Novo status: " + p.status);
-				return; 
-			} 
+	public static void listarPedidos() {
+		System.out.println("\n--- PEDIDOS ---");
+
+		for (Pedido p : BancoDeDados.pedidos) {
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+			String tempof = p.tempo.format(formatter);
+			System.out.println("Pedido ID: " + p.id + " | Cliente ID: " + p.idCliente + " | Item ID: " + p.idItens + " | Data e hora: " + tempof + " | Status: " + p.status);
 		}
-	System.out.println("Pedido não encontrado."); 
+	}
+
+
+	public static void avancarPedido(Scanner sc) {
+		listarPedidos();
+
+		System.out.print("Digite o ID do pedido: "); 
+		int id = sc.nextInt();
+	
+		for (Pedido p : BancoDeDados.pedidos) {
+			if (p.id == id) { p.avancarStatus();
+				System.out.println("Novo status: " + p.status);
+				return;
+				}
+			}
+		System.out.println("Pedido não encontrado.");
 	}
 }
