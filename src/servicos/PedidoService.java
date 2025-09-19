@@ -71,7 +71,7 @@ public class PedidoService {
 			}
 		}
 
-	int idPedido = BancoDeDados.pedidos.size() + 1;
+	int	idPedido = BancoDeDados.gerarIdPedido();
 	LocalDateTime tempo = LocalDateTime.now();
 	Pedido novoPedido = new Pedido(idPedido, idItens, idCliente, tempo);
 	BancoDeDados.pedidos.add(novoPedido);
