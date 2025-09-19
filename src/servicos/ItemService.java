@@ -18,8 +18,8 @@ public class ItemService {
             }
             System.out.print("Digite o tipo do item: ");
             String tipo = sc.nextLine();
-            if (Objects.equals(nome, "")){
-                System.out.println("Erro: nome invalido ");
+            if (Objects.equals(tipo, "")){
+                System.out.println("Erro: tipo invalido ");
                 return;
             }
             System.out.print("Digite o preço do item: ");
